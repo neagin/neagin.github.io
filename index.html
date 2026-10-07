@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neagin Neasamoni Santhi, wireless systems researcher</title>
+<meta name="description" content="PhD candidate at Northeastern University building real-time machine learning into the physical layer of 5G and 6G networks.">
+<meta property="og:title" content="Neagin Neasamoni Santhi">
+<meta property="og:description" content="PhD candidate at Northeastern University building real-time machine learning into the physical layer of 5G and 6G networks.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: light;
+
+    --paper: #FAF1F0;
+    --ink: #2E1A2B;
+    --ink-soft: #6E5568;
+    --line: #E9D5D6;
+    --plum: #7B2D5E;
+    --plum-ink: #FFFFFF;
+    --marigold: #E39B2D;
+
+    --serif: "Young Serif", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #1E1420;
+      --ink: #F5E8EE;
+      --ink-soft: #C4AEBE;
+      --line: #3B2A3B;
+      --plum: #F2A7D0;
+      --plum-ink: #2A1428;
+      --marigold: #F0B254;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #1E1420;
+    --ink: #F5E8EE;
+    --ink-soft: #C4AEBE;
+    --line: #3B2A3B;
+    --plum: #F2A7D0;
+    --plum-ink: #2A1428;
+    --marigold: #F0B254;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img, svg { max-width: 100%; }
+
+  a { color: var(--plum); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; border-radius: 4px; }
+
+  .skip {
+    position: absolute; left: 1rem; top: -4rem;
+    background: var(--plum); color: var(--plum-ink);
+    padding: 0.5rem 1rem; border-radius: 6px; z-index: 10;
+  }
+  .skip:focus { top: calc(env(safe-area-inset-top, 0px) + 1rem); }
+
+  .wrap {
+    width: 100%;
+    max-width: 66rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  /* Header */
+  .site-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    padding-block: 1.5rem;
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+  .site-nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .site-nav a:hover { color: var(--plum); }
+
+  /* Hero */
+  .hero { padding-block: clamp(2.5rem, 8vw, 5.5rem) 0; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 4.2vw + 1.2rem, 4.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    margin: 0 0 1.5rem;
+  }
+  .hero h1 span { display: block; }
+  .lede {
+    font-size: clamp(1.2rem, 0.8vw + 1rem, 1.45rem);
+    line-height: 1.45;
+    max-width: 36rem;
+    margin: 0;
+  }
+  .role { color: var(--ink-soft); margin: 0.85rem 0 0; max-width: 36rem; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  .btn-primary { background: var(--plum); color: var(--plum-ink); border: 1.5px solid var(--plum); }
+  .btn-quiet { color: var(--plum); border: 1.5px solid var(--plum); }
+  .btn:hover { text-decoration: none; filter: brightness(1.08); }
+
+  /* Journey */
+  .journey { margin: clamp(2.5rem, 6vw, 4rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
+  .journey svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+  .wave {
+    fill: none;
+    stroke: var(--marigold);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 1.9s cubic-bezier(0.55, 0.05, 0.3, 1) 0.2s forwards;
+  }
+  .wave-next {
+    fill: none;
+    stroke: var(--marigold);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 1 9;
+    opacity: 0;
+    animation: appear 0.6s ease 2s forwards;
+  }
+  .stop { opacity: 0; animation: appear 0.5s ease forwards; animation-delay: calc(0.35s + var(--i) * 0.28s); }
+  .stop circle { fill: var(--paper); stroke: var(--marigold); stroke-width: 3; }
+  .j-year { font-family: var(--sans); font-size: 14px; font-weight: 500; fill: var(--ink-soft); text-anchor: middle; font-variant-numeric: tabular-nums; }
+  .j-place { font-family: var(--serif); font-size: 20px; fill: var(--ink); text-anchor: middle; }
+  .j-role { font-family: var(--sans); font-size: 14.5px; fill: var(--ink-soft); text-anchor: middle; }
+
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
+
+  .journey-list {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 880px) {
+    .journey svg { display: none; }
+    .journey-list {
+      position: static;
+      width: auto; height: auto;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      list-style: none;
+      margin: 0;
+      padding: 0.25rem 0 0 1.5rem;
+      border-left: 2px solid var(--marigold);
+    }
+    .journey-list li { position: relative; padding-bottom: 1.4rem; }
+    .journey-list li:last-child { padding-bottom: 0.25rem; }
+    .journey-list li::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.5rem - 7px);
+      top: 0.3rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--marigold);
+    }
+    .jl-year { display: block; font-size: 0.85rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+    .jl-place { display: block; font-family: var(--serif); font-size: 1.25rem; line-height: 1.25; }
+    .jl-role { display: block; color: var(--ink-soft); font-size: 0.95rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .wave { animation: none; stroke-dashoffset: 0; }
+    .wave-next, .stop { animation: none; opacity: 1; }
+  }
+
+  /* Sections */
+  .section { padding-block: 0 clamp(3rem, 7vw, 5rem); }
+  .section::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: var(--line);
+    margin-bottom: clamp(2.75rem, 6vw, 4.5rem);
+  }
+  .section > h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.65rem, 1.2vw + 1.2rem, 2.1rem);
+    line-height: 1.15;
+    margin: 0 0 1.75rem;
+  }
+  .prose { max-width: 40rem; }
+  .prose p { margin: 0 0 1.1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+  .intro { font-size: 1.15rem; line-height: 1.55; max-width: 38rem; margin: 0 0 2.75rem; }
+
+  .subhead {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 3rem 0 1.25rem;
+  }
+
+  /* Research */
+  .project { max-width: 42rem; margin-bottom: 2.75rem; }
+  .project:last-child { margin-bottom: 0; }
+  .project h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 0 0.3rem;
+  }
+  .project .venue { color: var(--ink-soft); font-size: 0.95rem; margin: 0 0 0.85rem; }
+  .project p { margin: 0 0 0.9rem; }
+  .project p:last-child { margin-bottom: 0; }
+  .earlier .project { margin-bottom: 2rem; }
+  .earlier .project h3 { font-size: 1.2rem; }
+
+  /* Publications */
+  .pubs { list-style: none; padding: 0; margin: 0; max-width: 44rem; }
+  .pubs li { padding-block: 1.1rem; border-bottom: 1px solid var(--line); }
+  .pubs li:first-child { padding-top: 0; }
+  .pub-title { font-weight: 600; margin: 0 0 0.3rem; line-height: 1.4; }
+  .pub-authors, .pub-venue { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+  .pub-authors strong { color: var(--ink); font-weight: 600; }
+
+  /* Rows: experience, education, recognition, toolkit */
+  .rows { margin: 0; max-width: 46rem; }
+  .row {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.2rem 1.5rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .row:first-child { padding-top: 0; }
+  .row dt { color: var(--ink-soft); font-size: 0.95rem; font-variant-numeric: tabular-nums; padding-top: 0.08rem; }
+  .row dd { margin: 0; }
+  .what { display: block; font-weight: 600; }
+  .detail { display: block; color: var(--ink-soft); font-size: 0.97rem; margin-top: 0.15rem; }
+  .service { max-width: 40rem; margin: 2rem 0 0; color: var(--ink-soft); }
+
+  @media (max-width: 560px) {
+    .row { grid-template-columns: 1fr; }
+  }
+
+  /* Contact */
+  .contact p { max-width: 36rem; margin: 0; font-size: 1.15rem; line-height: 1.55; }
+  .contact .address { margin-top: 1rem; color: var(--ink-soft); font-size: 1rem; }
+
+  .site-foot {
+    padding-block: 0 2.5rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head wrap">
+  <a class="wordmark" href="#top">Neagin N. Santhi</a>
+  <nav class="site-nav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="top">
+    <h1><span>Neagin</span> <span>Neasamoni Santhi</span></h1>
+    <p class="lede">I build real-time intelligence into the physical layer of 5G and 6G networks.</p>
+    <p class="role">PhD candidate in Electrical and Computer Engineering at Northeastern University.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:neaginns123@gmail.com">Email me</a>
+      <a class="btn btn-quiet" href="https://www.linkedin.com/in/neagin-sebastian-6622b668" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-quiet" href="https://scholar.google.com/citations?user=adNUqK0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+
+    <div class="journey">
+      <svg viewBox="0 0 1000 272" aria-hidden="true" focusable="false">
+        <path class="wave" pathLength="1" d="M 90 110 C 172 110 172 170 254 170 C 336 170 336 110 418 110 C 500 110 500 170 582 170 C 664 170 664 110 746 110 C 828 110 828 170 910 170"/>
+        <path class="wave-next" pathLength="40" d="M 910 170 C 950 170 955 140 995 140"/>
+
+        <g class="stop" style="--i:0">
+          <circle cx="90" cy="110" r="7"/>
+          <text class="j-year" x="90" y="38">2009</text>
+          <text class="j-place" x="90" y="64">Trivandrum</text>
+          <text class="j-role" x="90" y="86">B.Tech at CET</text>
+        </g>
+        <g class="stop" style="--i:1">
+          <circle cx="254" cy="170" r="7"/>
+          <text class="j-year" x="254" y="208">2013</text>
+          <text class="j-place" x="254" y="234">Hyderabad</text>
+          <text class="j-role" x="254" y="256">M.Tech at IIT Hyderabad</text>
+        </g>
+        <g class="stop" style="--i:2">
+          <circle cx="418" cy="110" r="7"/>
+          <text class="j-year" x="418" y="38">2015</text>
+          <text class="j-place" x="418" y="64">Tejas Networks</text>
+          <text class="j-role" x="418" y="86">R&amp;D engineer</text>
+        </g>
+        <g class="stop" style="--i:3">
+          <circle cx="582" cy="170" r="7"/>
+          <text class="j-year" x="582" y="208">2017</text>
+          <text class="j-place" x="582" y="234">College Station</text>
+          <text class="j-role" x="582" y="256">M.Eng at Texas A&amp;M</text>
+        </g>
+        <g class="stop" style="--i:4">
+          <circle cx="746" cy="110" r="7"/>
+          <text class="j-year" x="746" y="38">2019</text>
+          <text class="j-place" x="746" y="64">Boston</text>
+          <text class="j-role" x="746" y="86">PhD at Northeastern</text>
+        </g>
+        <g class="stop" style="--i:5">
+          <circle cx="910" cy="170" r="7"/>
+          <text class="j-year" x="910" y="208">2026</text>
+          <text class="j-place" x="910" y="234">Nokia Bell Labs</text>
+          <text class="j-role" x="910" y="256">Network systems intern</text>
+        </g>
+      </svg>
+
+      <ol class="journey-list" aria-label="The path so far">
+        <li><span class="jl-year">2009</span><span class="jl-place">Trivandrum</span><span class="jl-role">B.Tech, College of Engineering Trivandrum</span></li>
+        <li><span class="jl-year">2013</span><span class="jl-place">Hyderabad</span><span class="jl-role">M.Tech, IIT Hyderabad</span></li>
+        <li><span class="jl-year">2015</span><span class="jl-place">Tejas Networks</span><span class="jl-role">R&amp;D engineer</span></li>
+        <li><span class="jl-year">2017</span><span class="jl-place">College Station</span><span class="jl-role">M.Eng, Texas A&amp;M University</span></li>
+        <li><span class="jl-year">2019</span><span class="jl-place">Boston</span><span class="jl-role">PhD, Northeastern University</span></li>
+        <li><span class="jl-year">2026</span><span class="jl-place">Nokia Bell Labs</span><span class="jl-role">Network systems intern</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section wrap" id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I'm a PhD candidate in Electrical and Computer Engineering at Northeastern University, where I work with Prof. Tommaso Melodia at the Institute for Intelligent Networked Systems.</p>
+      <p>My research brings machine learning into the lowest layers of the wireless stack, where decisions have to land within microseconds. I like building on real radios: GPU-accelerated 5G pipelines on NVIDIA Aerial, mmWave testbeds, and O-RAN dApps that sit right next to the PHY.</p>
+      <p>This past summer I was at Nokia Bell Labs, working on RAN pipelines that adapt to the applications they serve. Back at Northeastern, I'm taking my interference work from detection to mitigation, and training channel estimators on over-the-air data.</p>
+    </div>
+  </section>
+
+  <section class="section wrap" id="research">
+    <h2>Research</h2>
+    <p class="intro">Most of my work asks one question: how much intelligence can you fit into a radio's real-time loop before you miss the deadline?</p>
+
+    <article class="project">
+      <h3>InterfO-RAN</h3>
+      <p class="venue">ACM MobiHoc 2025 · U.S. patent pending. <a href="https://dl.acm.org/doi/10.1145/3704413.3764454" target="_blank" rel="noopener">Read the paper</a></p>
+      <p>Uplink interference is easy to notice and hard to catch in time. InterfO-RAN is the first GPU-accelerated O-RAN dApp: it runs alongside the NVIDIA Aerial GPU-accelerated PHY inside an O-RAN-compliant gNB, and uses a convolutional neural network to detect in-band uplink interference as it happens.</p>
+      <p>I collected the interference and interference-free datasets, trained the model, brought it into Aerial through ONNX Runtime, and optimized it with TensorRT. Trained and tested on more than 7 million 5G NR uplink slots from real deployments, it detects interference with over 91% accuracy in about 650&nbsp;µs on a commercial-grade private 5G network.</p>
+    </article>
+
+    <article class="project">
+      <h3>ARCHES</h3>
+      <p class="venue">arXiv preprint, 2026. <a href="https://arxiv.org/abs/2604.23397" target="_blank" rel="noopener">Read the paper</a></p>
+      <p>AI models in the PHY aren't free: they cost GPU time and power on every slot. ARCHES switches between AI and conventional channel estimation in a GPU-accelerated 5G pipeline in real time, using cross-layer telemetry to decide when inference is worth running.</p>
+      <p>A CUDA switch kernel and a dApp control path close the loop in 140&nbsp;µs end to end. The result is 5–7% higher uplink throughput and 9.6% lower GPU power, at the same time.</p>
+      <p>We showed ARCHES running live at MWC 2026, as a Northeastern and SoftBank demo at the AI-RAN Alliance booth. <a href="https://www.youtube.com/watch?v=74zj3L842Vg" target="_blank" rel="noopener">Watch the demo</a></p>
+    </article>
+
+    <article class="project">
+      <h3>From detection to mitigation</h3>
+      <p class="venue">In progress</p>
+      <p>Detecting interference is only half the job. I'm now extending InterfO-RAN into a mitigation framework: an xApp groups UEs by the interference conditions they experience, and a dApp adapts the gNB's PRB allocations in real time to steer them away from interfered resources.</p>
+    </article>
+
+    <article class="project">
+      <h3>AI channel estimation from over-the-air data</h3>
+      <p class="venue">In progress</p>
+      <p>I'm training a deep-learning channel estimator for the 5G NR uplink (PUSCH) on over-the-air data from an NVIDIA Aerial testbed, and judging it the way a receiver would: end to end through equalization, LDPC decoding, and code-block CRC checks.</p>
+    </article>
+
+    <div class="earlier">
+      <h3 class="subhead">Earlier work</h3>
+
+      <article class="project">
+        <h3>Real-time video over 60&nbsp;GHz</h3>
+        <p class="venue">IEEE GLOBECOM Workshops 2022. <a href="https://ieeexplore.ieee.org/document/10008612" target="_blank" rel="noopener">Read the paper</a></p>
+        <p>The NI mmWave Transceiver System came as a PHY-only platform. I built a retransmission-based MAC layer on top of it, turning it into an end-to-end programmable testbed that streams video reliably in real time.</p>
+      </article>
+
+      <article class="project">
+        <h3>5G NR initial access</h3>
+        <p class="venue">Texas A&amp;M University, with Prof. P. R. Kumar</p>
+        <p>Helped design the synchronization and random access procedures for a 5G NR implementation on the NI mmWave Transceiver System.</p>
+      </article>
+
+      <article class="project">
+        <h3>Interference-free cloud RAN</h3>
+        <p class="venue">IIT Hyderabad and Tejas Networks, with Prof. Kiran Kuchi</p>
+        <p>A 4G cloud RAN prototype that cancels interference using downlink coordinated multipoint transmission, TDD channel calibration, and Tomlinson–Harashima precoding at both transmitter and receiver, running on a full 6×6 base station and UE setup. I designed the pilot and data transmission over LTE OFDM frames. The project won three gold medals at the India International Innovation Fair in 2016 and was exhibited at Rashtrapati Bhavan in 2017.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="publications">
+    <h2>Publications</h2>
+    <h3 class="subhead">First-author</h3>
+    <ol class="pubs">
+      <li>
+        <p class="pub-title">ARCHES: Adaptive Real-Time Switching of AI Models for the RAN</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong>, D. Villa, M. Polese, S. D'Oro, Y. Lee, K. Furueda, and T. Melodia</p>
+        <p class="pub-venue">arXiv preprint, 2026. <a href="https://arxiv.org/abs/2604.23397" target="_blank" rel="noopener">arXiv:2604.23397</a></p>
+      </li>
+      <li>
+        <p class="pub-title">InterfO-RAN: Real-Time In-band Cellular Uplink Interference Detection with GPU-Accelerated dApps</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong>, D. Villa, M. Polese, and T. Melodia</p>
+        <p class="pub-venue">ACM MobiHoc 2025, Houston, Texas, pp. 71–80. <a href="https://dl.acm.org/doi/10.1145/3704413.3764454" target="_blank" rel="noopener">ACM Digital Library</a>, <a href="https://arxiv.org/abs/2507.23177" target="_blank" rel="noopener">arXiv:2507.23177</a></p>
+      </li>
+      <li>
+        <p class="pub-title">An End-to-End Programmable Testbed for the Experimental Evaluation of Video Streaming at mmWaves</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong>, M. Polese, and T. Melodia</p>
+        <p class="pub-venue">IEEE GLOBECOM Workshops 2022, Rio de Janeiro, Brazil, pp. 124–129. <a href="https://ieeexplore.ieee.org/document/10008612" target="_blank" rel="noopener">IEEE Xplore</a></p>
+      </li>
+    </ol>
+
+    <h3 class="subhead">Co-authored</h3>
+    <ol class="pubs">
+      <li>
+        <p class="pub-title">ARIADNE: AI-RAN Informed Link Adaptation in Digital Twin Network Environments</p>
+        <p class="pub-authors">M. Tsampazi, <strong>N. N. Santhi</strong>, N. Perrotta, F. Dressler, and T. Melodia</p>
+        <p class="pub-venue">European Wireless 2026, Rimini, Italy. <a href="https://arxiv.org/abs/2605.29772" target="_blank" rel="noopener">arXiv:2605.29772</a></p>
+      </li>
+    </ol>
+
+    <h3 class="subhead">Patents</h3>
+    <ol class="pubs">
+      <li>
+        <p class="pub-title">System and Method for Real-Time In-Band Cellular Uplink Interference Detection</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong>, D. Villa, M. Polese, and T. Melodia</p>
+        <p class="pub-venue">U.S. Patent Application No. 19/657,904, filed April 24, 2026 (pending)</p>
+      </li>
+    </ol>
+
+    <h3 class="subhead">Demos and posters</h3>
+    <ol class="pubs">
+      <li>
+        <p class="pub-title">AI Switching Mechanism for AI-Native RAN</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong>, D. Villa, M. Polese, S. D'Oro, Y. Lee, K. Furueda, and T. Melodia (Northeastern University and SoftBank)</p>
+        <p class="pub-venue">Live demo, AI-RAN Alliance booth, MWC 2026. <a href="https://www.youtube.com/watch?v=74zj3L842Vg" target="_blank" rel="noopener">Watch the video</a></p>
+      </li>
+      <li>
+        <p class="pub-title">Interference free communication using Cloud Radio Access Network (CRAN): A 5G prototype</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong>, Sailaxman, and K. Kuchi</p>
+        <p class="pub-venue">Demo and poster, National Conference on Communications and 5G Workshop, IIT Madras, March 2017</p>
+      </li>
+      <li>
+        <p class="pub-title">Interference free communication using Cloud Radio Access Network (CRAN): A 5G prototype</p>
+        <p class="pub-authors"><strong>N. N. Santhi</strong> and K. Kuchi</p>
+        <p class="pub-venue">Poster, India International Innovation Fair, Bangalore, September 2016</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section wrap" id="experience">
+    <h2>Experience and education</h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>Summer 2026</dt>
+        <dd><span class="what">Network Systems Intern, Nokia Bell Labs</span><span class="detail">Application-context-aware capabilities for GPU-accelerated RAN, so the PHY and RAN pipeline adapts to the traffic it serves.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2019–present</dt>
+        <dd><span class="what">Graduate Research Assistant, Northeastern University</span><span class="detail">Institute for Intelligent Networked Systems, with Prof. Tommaso Melodia. Real-time AI in GPU-accelerated 5G PHY, interference detection and mitigation with O-RAN dApps and xApps, and mmWave testbeds.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2017–2019</dt>
+        <dd><span class="what">Graduate Research Assistant, Texas A&amp;M University</span><span class="detail">With Prof. P. R. Kumar. 5G NR initial access on the NI mmWave Transceiver System.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2015–2017</dt>
+        <dd><span class="what">Engineer, R&amp;D, Tejas Networks</span><span class="detail">4G cloud RAN prototype with downlink CoMP and Tomlinson–Harashima precoding.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2014</dt>
+        <dd><span class="what">Teaching Assistant, IIT Hyderabad</span><span class="detail">Advanced Cellular Communication, and the Communications Lab.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2013–2015</dt>
+        <dd><span class="what">Graduate Research Assistant, IIT Hyderabad</span><span class="detail">With Prof. Kiran Kuchi. Interference cancellation in cloud RAN.</span></dd>
+      </div>
+    </dl>
+
+    <h3 class="subhead">Education</h3>
+    <dl class="rows">
+      <div class="row">
+        <dt>2019–present</dt>
+        <dd><span class="what">Ph.D., Electrical and Computer Engineering</span><span class="detail">Northeastern University, Boston</span></dd>
+      </div>
+      <div class="row">
+        <dt>2017–2019</dt>
+        <dd><span class="what">M.Eng., Electrical and Computer Engineering</span><span class="detail">Texas A&amp;M University, College Station</span></dd>
+      </div>
+      <div class="row">
+        <dt>2013–2015</dt>
+        <dd><span class="what">M.Tech., Communication and Signal Processing</span><span class="detail">Indian Institute of Technology Hyderabad</span></dd>
+      </div>
+      <div class="row">
+        <dt>2009–2013</dt>
+        <dd><span class="what">B.Tech., Electronics and Communication Engineering</span><span class="detail">College of Engineering Trivandrum</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section wrap" id="recognition">
+    <h2>Recognition and service</h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>2025</dt>
+        <dd><span class="what">NSF Student Travel Grant</span><span class="detail">ACM MobiHoc 2025</span></dd>
+      </div>
+      <div class="row">
+        <dt>2024</dt>
+        <dd><span class="what">Acknowledged in IEEE Access for testbed bring-up</span><span class="detail">Bisoyi et al., “Massive MIMO with circular antenna array: Design, implementation, and validation”</span></dd>
+      </div>
+      <div class="row">
+        <dt>2019–2020</dt>
+        <dd><span class="what">Dean's Fellowship</span><span class="detail">Northeastern University</span></dd>
+      </div>
+      <div class="row">
+        <dt>2019</dt>
+        <dd><span class="what">Women in IEEE (WIEEE) Scholarship</span></dd>
+      </div>
+      <div class="row">
+        <dt>2017</dt>
+        <dd><span class="what">Festival of Innovation, Rashtrapati Bhavan</span><span class="detail">The cloud RAN project was exhibited at the official residence of the President of India.</span></dd>
+      </div>
+      <div class="row">
+        <dt>2016</dt>
+        <dd><span class="what">Three gold medals, India International Innovation Fair</span><span class="detail">With the IIT Hyderabad team: Recognition of Creativity and Innovation (IIIF), Contribution to Innovation (Republic of Portugal), and Best National Invention (International Federation of Inventors' Associations).</span></dd>
+      </div>
+      <div class="row">
+        <dt>2009</dt>
+        <dd><span class="what">Prof. V K Savithri Endowment</span><span class="detail">Best Incoming Girl Student, College of Engineering Trivandrum</span></dd>
+      </div>
+    </dl>
+    <p class="service">I serve on the Technical Program Committee of the IEEE INFOCOM 2026 Poster Track, and I've reviewed for IEEE SECON (2020), ACM MobiHoc and ACM MobiCom (2022), and ICCC and EuCNC &amp; 6G Summit (2025).</p>
+  </section>
+
+  <section class="section wrap" id="community">
+    <h2>Community</h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>2023, 2025</dt>
+        <dd><span class="what">Poster presentations, WIoT Industry Day</span><span class="detail">Northeastern University</span></dd>
+      </div>
+      <div class="row">
+        <dt>2023</dt>
+        <dd><span class="what">Volunteer, IEEE ComSoc School</span><span class="detail">6G Communication and Wireless Technologies</span></dd>
+      </div>
+      <div class="row">
+        <dt>2023</dt>
+        <dd><span class="what">Volunteer, IEEE WoWMoM</span><span class="detail">World of Wireless, Mobile and Multimedia Networks</span></dd>
+      </div>
+      <div class="row">
+        <dt>2019</dt>
+        <dd><span class="what">Public Relations Officer, Women in IEEE</span><span class="detail">Texas A&amp;M University. Organized chapter events.</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section wrap" id="toolkit">
+    <h2>Toolkit</h2>
+    <dl class="rows">
+      <div class="row">
+        <dt>Wireless</dt>
+        <dd>NVIDIA Aerial, pyAerial, OpenAirInterface, O-RAN dApps and xApps, 3GPP Releases 8, 15 and 16</dd>
+      </div>
+      <div class="row">
+        <dt>Machine learning</dt>
+        <dd>PyTorch, TensorFlow, Keras, ONNX Runtime, TensorRT; CNNs, RNNs, transfer learning, model optimization</dd>
+      </div>
+      <div class="row">
+        <dt>GPU</dt>
+        <dd>CUDA, cuDNN, Nsight Systems, NVIDIA profiler</dd>
+      </div>
+      <div class="row">
+        <dt>Languages</dt>
+        <dd>C++, C, Python, CUDA, MATLAB, SQL</dd>
+      </div>
+      <div class="row">
+        <dt>Also</dt>
+        <dd>Docker, Git, Grafana, LabVIEW, LaTeX</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section wrap contact" id="contact">
+    <h2>Say hello</h2>
+    <p>I'm glad to talk about real-time ML in the RAN, GPU-accelerated PHY, O-RAN, or research collaborations.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:neaginns123@gmail.com">Email me</a>
+      <a class="btn btn-quiet" href="https://www.linkedin.com/in/neagin-sebastian-6622b668" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-quiet" href="https://scholar.google.com/citations?user=adNUqK0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+    <p class="address">neaginns123@gmail.com</p>
+  </section>
+</main>
+
+<footer class="site-foot wrap">
+  <span>© 2026 Neagin Neasamoni Santhi</span>
+  <span>Last updated October 2026</span>
+</footer>
+</body>
+</html>
