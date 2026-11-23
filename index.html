@@ -664,23 +664,21 @@
 </footer>
 </body>
 </html>
-html { background-color: #fbf3f5; }
-html body { background: transparent; }           /* overrides your site's own body color */
-html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(rgb(255 255 255 / 0.86), rgb(255 255 255 / 0.86)),
-    url("/fall-leaves.webp") center / cover no-repeat;  /* the leading slash starts from your site's top folder */
-}
-@media (prefers-color-scheme: dark) {
-  html { background-color: #1a1214; }
+  /* Fall-leaves background */
+  :root { --veil: rgb(250 241 240 / 0.88); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --veil: rgb(30 20 32 / 0.85); }
+  }
+  :root[data-theme="dark"] { --veil: rgb(30 20 32 / 0.85); }
+  html { background-color: var(--paper); }
+  html body { background: transparent; }
   html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background:
-      linear-gradient(rgb(20 14 16 / 0.84), rgb(20 14 16 / 0.84)),
+      linear-gradient(var(--veil), var(--veil)),
       url("/fall-leaves.webp") center / cover no-repeat;
   }
-}
