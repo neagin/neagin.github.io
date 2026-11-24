@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -309,6 +309,30 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem 2rem;
+  }
+
+  /* Fall-leaves background: the leaves show brightly around a soft paper column */
+  html { background-color: var(--paper); }
+  html body { background: transparent; }
+  html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(rgb(250 241 240 / 0.30), rgb(250 241 240 / 0.30)),
+      url("fall-leaves.webp") center / cover no-repeat,
+      url("fall-leaves.jpg") center / cover no-repeat;
+  }
+  .wrap {
+    background-color: rgb(250 241 240 / 0.88);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+  .hero { display: flow-root; }  /* keeps the column continuous below the timeline */
+  @media (max-width: 70rem) {
+    .wrap { width: auto; margin-inline: 0.75rem; }  /* a thin frame of leaves on smaller screens */
   }
 </style>
 </head>
@@ -664,21 +688,3 @@
 </footer>
 </body>
 </html>
-  /* Fall-leaves background */
-  :root { --veil: rgb(250 241 240 / 0.88); }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --veil: rgb(30 20 32 / 0.85); }
-  }
-  :root[data-theme="dark"] { --veil: rgb(30 20 32 / 0.85); }
-  html { background-color: var(--paper); }
-  html body { background: transparent; }
-  html::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      linear-gradient(var(--veil), var(--veil)),
-      url("/fall-leaves.webp") center / cover no-repeat;
-  }
